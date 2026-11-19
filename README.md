@@ -1,127 +1,89 @@
-# VISION HOUSE — Premium Optometry & Eye Care Website
+# FUTBOLIÑO — Premium Gaming Federation Platform
+### High-Fidelity Interactive Web Application Demo
 
-> *"See Life Differently."*
+[![Vite](https://img.shields.io/badge/Vite-v8.3-646CFF?logo=vite)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React-v19-61DAFB?logo=react)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-v5.7-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v3.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 
-An exceptionally refined, luxury editorial website created for **VISION HOUSE**, a contemporary high-end optometry studio combining unhurried clinical eye care, modern diagnostic technology, and thoughtfully curated independent eyewear.
-
----
-
-## ✦ Brand Identity & Design System
-
-The visual identity is modeled after luxury editorial publications, boutique hospitality brands, and modern wellness studios (inspired by Aesop and Apple design principles) rather than conventional clinical healthcare templates.
-
-### Color Palette
-- **Warm Ivory (`#F7F6F2`)** — Primary background, soft natural lighting ambiance
-- **Soft Warm Stone (`#EFEEE8`)** — Secondary background and structural cards
-- **Deep Charcoal Green (`#252B27`)** — Primary typography and subtle contrast
-- **Muted Grey Olive (`#74786F`)** — Secondary typography, captions, and metadata
-- **Muted Forest Green (`#52665B`)** — Primary brand tone and call-to-actions
-- **Soft Sage (`#A9B6A5`)** — Secondary brand tone, badges, and accents
-- **Warm Sand (`#B8A18A`)** — Earthy warmth for highlights
-- **Deep Forest (`#26332D`)** — Dark contrasting statement sections & global footer
-- **Soft Neutral Border (`#E4E2DA`)** — Clean, hairline borders replacing heavy drop shadows
-
-### Typography
-- **Editorial Headings:** *Cormorant Garamond* with selective italic emphasis on emotive keywords.
-- **Body & Navigation:** *DM Sans* with generous line heights and controlled letter-spacing.
+A competitive, high-fidelity interactive demonstration of the **FUTBOLIÑO Gaming Federation Platform**. Designed to client acquisition standards, the platform simulates the full end-to-end player lifecycle: onboarding, matchmaking, tournament knockout brackets, season leagues, authoritative Unity match engine handshakes, Elo calculations, and federation admin operations with local persistence.
 
 ---
 
-## ✦ Website Architecture & Pages
+## 🌟 Executive Overview & Key Highlights
 
-The application is built as a multi-page client-rendered single page application (SPA) with zero dead links or placeholders:
-
-1. **Home (`/`)**:
-   - Branded loading screen (warm ivory, monogram, line animation, 800ms initial duration).
-   - Sticky global navigation with smooth transparency-to-blur scroll transitions.
-   - Cinematic hero section with warm editorial imagery, responsive typography, and scroll indicators.
-   - Brand Introduction: 2-column editorial narrative and authentic optometrist-patient photography.
-   - Three Approach Pillars: Personalized Attention, Modern Technology, Everyday Confidence.
-   - Featured Services grid with duration badges and direct booking triggers.
-   - Eyewear Showcase featuring 4 flagship frames with live color swatches and interactive detail modals.
-   - Dark Forest statement section: "Because your vision is personal."
-   - Patient Journey timeline (3-step horizontal/vertical roadmap).
-   - Demonstration Testimonials carousel with patient quotes.
-   - Closing CTA banner on soft sage.
-
-2. **About Us (`/about`)**:
-   - Hero narrative: *"Thoughtful care. A clearer perspective."*
-   - Our Story: Why human-centered, unhurried healthcare matters.
-   - Four Philosophy Pillars: *Listen First*, *Care Thoughtfully*, *See Every Detail*, and *Put People Before Processes*.
-   - Meet the Team: Professional profiles for Dr. Elena Vance, Dr. Julian Thorne, and Maya Lin.
-   - Direct consultation booking trigger.
-
-3. **Our Services (`/services`)**:
-   - In-depth alternating sections for all 5 clinical specializations:
-     1. *Comprehensive Eye Exams* (45-50 min, non-invasive imaging)
-     2. *Contact Lens Fittings* (corneal mapping, dry-eye trials)
-     3. *Digital Eye Strain Consultations* (ergonomic workstation focal depths)
-     4. *Prescription Eyewear Styling* (sub-millimeter pupillometry)
-     5. *General Eye Health & Preventative Care* (tear breakup and preventative wellness)
-   - Detailed "What to Expect" checklists for each service.
-   - Interactive keyboard-operable FAQ Accordion.
-
-4. **Eyewear Boutique (`/eyewear`)**:
-   - Curated gallery of 8 handcrafted frames (The Atelier, The Sol, The Forma, The Rowan, The Kanso, The Mercer, The Vesper, The Astrid).
-   - Real-time category filtering (*All Frames*, *Classic*, *Minimal*, *Contemporary*, *Optical*).
-   - Sort dropdown (*Featured*, *Name A–Z*, *Price: Low to High*, *Price: High to Low*).
-   - Interactive Product Detail Modal:
-     - Large imagery and architectural specs (measurements, frame weight, fit).
-     - Interactive colorway swatches that dynamically update the frame preview.
-     - Previous / Next keyboard and button navigation.
-     - Direct "Schedule Frame Fitting" action pre-filling the appointment form.
-
-5. **Patient Resources (`/patient-resources`)**:
-   - First Visit 3-phase timeline (Welcome & Intake, Doctor Exam, Optical Consultation).
-   - Interactive Pre-Appointment Checklist with toggleable checkboxes.
-   - Studio logistics: operating hours, location details, public transit & parking validation.
-   - Comprehensive Patient FAQs.
-
-6. **Contact & Appointments (`/contact`)**:
-   - Practice telephone, direct email, suite address, and hours.
-   - Stylized Interactive Neighborhood Map rendered via custom SVG with zoom toggles.
-   - Interactive Appointment Request Form:
-     - Full Name, Email, Phone Number, Service Type, Preferred Date, Preferred Time, and Notes.
-     - Complete frontend validation with real-time error feedback.
-     - Loading state and success confirmation screen with appointment summary and celebratory confetti.
-
-7. **Universal Components**:
-   - Quick Appointment Drawer Modal accessible from any button on any page.
-   - Global Footer (`#26332D`) with quick links, legal privacy modal, and smooth back-to-top scroll.
-   - Reduced motion accessibility (`prefers-reduced-motion` compliance).
+- **Aesthetic Direction:** Restrained, sophisticated sports technology aesthetic using forest greens (`#245C45`), warm off-whites (`#F7F8F5`), soft neutrals (`#F0F2EE`), deep charcoal (`#202722`), and muted gold accents (`#B69A60`). No electric blues or neon gradients.
+- **Unified Demonstration State:** Built on a centralized Zustand store with `localStorage` persistence (`futbolino_demo_state_v1`). All match results, bracket progressions, points tables, and Elo adjustments synchronize in real-time.
+- **Unity Match Engine Simulation:** Demonstrates pre-match session allocation, a 5-stage WebRTC connection handshake, live tactical pitch HUD, and server-authoritative score verification (PRD Section 25).
+- **Interactive Knockout Bracket:** An 8-player single-elimination tournament bracket with Quarter-Finals, Semi-Finals, Grand Final, dynamic winner propagation, and champion coronation.
+- **Round-Robin League:** 8-club championship table featuring automatic sorting by Points → Goal Difference → Goals Scored, with instant fixture simulation.
+- **Federation High Command (Admin Console):** Complete user moderation (suspend/reactivate), scoreline arbitration, tournament creation modal, and payment ledger with simulated refunds.
 
 ---
 
-## ✦ Technology Stack
+## 🧭 Application Routes
 
-- **React 19 & TypeScript**
-- **Vite** — Fast, modern build tool
-- **Tailwind CSS 3.4** — Custom design tokens & utility styles
-- **React Router DOM 7** — Client-side route handling & scroll restoration
-- **Lucide React** — Minimal geometric icons
-- **Canvas Confetti** — Tactile celebratory interaction on appointment completion
+### Public Federation Website
+| Route | Page | Key Features |
+|---|---|---|
+| `/` | **Landing Page** | Cinematic stadium visual, animated live counters (12,480 players), split About section, How it works, Featured competitions, Top 5 global rankings preview, Footer |
+| `/login` | **Authentication** | Demo 1-click login as Alex Morgan (`demo123`), show/hide password, simulated forgot password modal |
+| `/register` | **Registration** | Player handle creation, password strength meter, country selector, baseline 1,000 Elo initialization |
+| `/tutorial` | **Academy Playbook** | 6 masterclasses (Movement, Passing, Defence, Shooting, Tournaments) with interactive video player modal |
+
+### Authenticated Player Platform
+| Route | Page | Key Features |
+|---|---|---|
+| `/dashboard` | **Player Dashboard** | Welcome banner, 4 KPI cards (1,485 Elo, #124 Rank, 68 Matches, 64.7% Win Rate), performance bars, recent match dossiers, World Cup QF4 fixture launch |
+| `/play` | **Friendly Match** | Tactician search, player directory, match sanction picker (Friendly vs Ranked) |
+| `/challenges` | **Challenges Hub** | Incoming, Outgoing, and Accepted tabs with inline accept triggers |
+| `/matches/:id` | **Unity Match Simulation** | Pre-match header, 5-stage handshake, live tactical pitch simulation, victory simulation triggers, Elo recalculation |
+| `/tournaments` | **Tournament Hub** | Filter by All, Active, Registration Open, Upcoming; checkout modal with simulated credit card & PayPal processing |
+| `/tournaments/:id` | **Tournament Details** | Overview, participant roster, and interactive 8-player knockout bracket with live advancement |
+| `/league` | **League Championship** | Premier Division Season 4 table, matchday 7 fixtures with instant score simulation and table re-sorting |
+| `/history` | **Match History** | KPI summary, search & filters (Ranked, Tournament, League, Friendly), detailed match dossiers |
+| `/rankings` | **Global Rankings** | Verified Elo leaderboard (K=32), country filter, player search, user highlight |
+| `/profile` & `/players/:id` | **Player Profile** | Dossier for Alex Morgan or any player, tactical formations, match logs |
+| `/notifications` | **Notifications Center** | Unread badges, filter by category, inline challenge acceptance |
+
+### Administration Console
+| Route | Page | Key Features |
+|---|---|---|
+| `/admin` | **Admin Dashboard** | High-level metrics, active matches audit, competitor compliance status |
+| `/admin/users` | **User Control** | Tactician directory, search, suspend & reactivate player actions |
+| `/admin/matches` | **Match Arbitration** | Ledger review, scoreline correction modal, voiding anomalies |
+| `/admin/tournaments` | **Tournament Operations** | New tournament sanctioning modal with validation (name, format, fee, prize, dates) |
+| `/admin/leagues` | **League Operations** | Round schedule oversight, force-simulate fixtures |
+| `/admin/payments` | **Treasury Ledger** | Transaction nonces, method breakdown, simulated refund processing |
 
 ---
 
-## ✦ Local Development & Preview
+## ⚽ Elo Rating Implementation (PRD Section 13.3)
 
-### Prerequisites
-Node.js (v18+) and npm.
+Matches are recalibrated with standard Elo mathematics:
+- **Baseline starting rating:** `1,000`
+- **Federation K-factor:** `32`
+- **Expected Score Formula:**
+  $$\text{Expected} = \frac{1}{1 + 10^{\frac{\text{Rating}_{\text{Opponent}} - \text{Rating}_{\text{Player}}}{400}}}$$
+- **Rating Delta:**
+  $$\Delta = \text{Round}\left(K \times (\text{Actual} - \text{Expected})\right)$$
 
-### Running the Project
+*Unranked Friendly matches do not modify Elo standings.*
+
+---
+
+## 🛠️ Development & Local Run
+
 ```bash
-# Install dependencies (already completed)
+# Install dependencies
 npm install
 
-# Start local development server with Hot Module Replacement (HMR)
+# Start development server
 npm run dev
 
-# Build for production
+# Run TypeScript check & build production bundle
 npm run build
 
-# Preview production build locally
+# Preview production build
 npm run preview
 ```
-
-The production preview is currently active on:
-**`http://localhost:4173/`**
