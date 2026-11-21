@@ -1,181 +1,85 @@
-export type MatchType = 'friendly' | 'ranked' | 'tournament' | 'league';
-export type MatchStatus = 'scheduled' | 'connecting' | 'in_progress' | 'completed' | 'cancelled';
-export type MatchResult = 'playerA_win' | 'playerB_win' | 'draw' | 'pending';
-export type UserStatus = 'active' | 'suspended';
+export type Region = 'USA' | 'GCC' | 'Southeast Asia' | 'Canada';
 
-export interface Player {
+export type Denomination = 'Sunni' | 'Shia' | 'Just Muslim' | 'Independent';
+
+export type MembershipTier = 'Free' | 'Silver' | 'Gold' | 'Elite' | 'Complimentary Silver';
+
+export interface UserProfile {
   id: string;
-  username: string;
-  displayName: string;
-  email: string;
-  avatar: string;
+  name: string;
+  age: number;
+  gender: 'man' | 'woman';
+  region: Region;
   country: string;
-  countryCode: string;
-  rating: number; // Elo rating
-  rank: number;
-  matchesPlayed: number;
-  wins: number;
-  draws: number;
-  losses: number;
-  winRate: number; // percentage
-  goalsFor: number;
-  goalsAgainst: number;
-  memberSince: string;
-  tacticalStyle?: string;
-  bio?: string;
-  status: UserStatus;
-  isDemoUser?: boolean;
+  city: string;
+  university: string;
+  major: string;
+  graduationYear?: number;
+  denomination: Denomination;
+  interests: string[];
+  bio: string;
+  avatar: string;
+  photos: string[];
+  compatibility: number;
+  isSample: boolean;
+  emailVerified: boolean;
+  photoChecked: boolean;
+  tier: MembershipTier;
+  joinedDate: string;
+  isPendingPhotoApproval?: boolean;
 }
 
-export interface MatchEvent {
-  minute: number;
-  type: 'goal' | 'save' | 'yellow_card' | 'tactical_shift' | 'corner';
-  player: string;
-  description: string;
-}
-
-export interface Match {
-  id: string; // e.g. FTB-2026-8821
-  type: MatchType;
-  competitionId?: string;
-  competitionName: string;
-  playerAId: string;
-  playerBId: string;
-  playerA: Player;
-  playerB: Player;
-  scoreA: number;
-  scoreB: number;
-  status: MatchStatus;
-  result: MatchResult;
-  ratingChangeA: number;
-  ratingChangeB: number;
-  date: string;
-  duration: string;
-  stage?: string;
-  events?: MatchEvent[];
-  unitySessionToken?: string;
-  unityMatchId?: string;
-  tournamentId?: string;
-  leagueId?: string;
-  roundNumber?: number;
-}
-
-export interface Challenge {
+export interface Message {
   id: string;
   senderId: string;
-  receiverId: string;
-  sender: Player;
-  receiver: Player;
-  matchType: MatchType;
-  status: 'pending' | 'accepted' | 'declined';
-  createdAt: string;
-  matchId?: string;
+  recipientId: string;
+  text: string;
+  timestamp: string;
+  isRead: boolean;
 }
 
-export interface BracketMatch {
+export interface Conversation {
   id: string;
-  round: number; // 1 = Quarter-finals, 2 = Semi-finals, 3 = Final
-  roundName: string;
-  matchIndex: number;
-  playerA?: Player;
-  playerB?: Player;
-  scoreA?: number;
-  scoreB?: number;
-  winnerId?: string;
-  matchId?: string;
-  isCompleted: boolean;
-  nextMatchIndex?: number; // Pointer to next round slot
-  nextMatchSlot?: 'A' | 'B';
+  participantId: string;
+  lastMessage: string;
+  lastTimestamp: string;
+  unreadCount: number;
+  messages: Message[];
 }
 
-export interface Tournament {
+export interface ReportItem {
   id: string;
-  name: string;
-  slug: string;
-  type: 'Knockout 8' | 'Knockout 16' | 'Round Robin';
-  status: 'upcoming' | 'registration_open' | 'active' | 'completed';
-  entryFee: number; // 0 for free
-  prizePool: number;
-  maxParticipants: number;
-  participants: Player[];
-  startDate: string;
-  registrationDeadline: string;
-  description: string;
-  bannerImage: string;
-  championId?: string;
-  champion?: Player;
-  bracket: BracketMatch[];
+  targetUserId: string;
+  targetUserName: string;
+  reason: string;
+  notes: string;
+  timestamp: string;
+  status: 'pending' | 'reviewed' | 'action_taken';
 }
 
-export interface LeagueTeamStats {
-  playerId: string;
-  player: Player;
-  played: number;
-  won: number;
-  drawn: number;
-  lost: number;
-  goalsFor: number;
-  goalsAgainst: number;
-  goalDifference: number;
-  points: number;
-  form: ('W' | 'D' | 'L')[];
-}
-
-export interface LeagueFixture {
+export interface ToastMessage {
   id: string;
-  round: number;
-  playerAId: string;
-  playerBId: string;
-  playerA: Player;
-  playerB: Player;
-  scoreA?: number;
-  scoreB?: number;
-  isCompleted: boolean;
-  matchId?: string;
-  date: string;
-}
-
-export interface League {
-  id: string;
-  name: string;
-  season: string;
-  description: string;
-  currentLeaderId: string;
-  teams: LeagueTeamStats[];
-  fixtures: LeagueFixture[];
-}
-
-export interface Payment {
-  id: string;
-  transactionId: string;
-  playerId: string;
-  playerUsername: string;
-  tournamentId: string;
-  tournamentName: string;
-  amount: number;
-  currency: string;
-  method: 'Credit Card' | 'PayPal' | 'Federation Credits';
-  status: 'Paid' | 'Pending' | 'Failed' | 'Refunded';
-  date: string;
-}
-
-export interface AppNotification {
-  id: string;
-  userId: string;
-  type: 'challenge' | 'match_result' | 'tournament' | 'system' | 'rating';
   title: string;
   message: string;
-  date: string;
-  isRead: boolean;
-  link?: string;
-  challengeId?: string;
-  matchId?: string;
+  type?: 'info' | 'success' | 'warning';
 }
 
-export interface ActivityLog {
-  id: string;
-  userId: string;
-  type: 'match' | 'rating' | 'tournament' | 'challenge';
-  description: string;
-  timestamp: string;
+export interface QuizQuestion {
+  id: number;
+  question: string;
+  subtitle: string;
+  options: {
+    label: string;
+    description: string;
+    trait: string;
+    scoreWeight: number;
+  }[];
+}
+
+export interface QuizResult {
+  completed: boolean;
+  archetype: string;
+  archetypeDescription: string;
+  traits: string[];
+  compatibilityBonus: number;
 }

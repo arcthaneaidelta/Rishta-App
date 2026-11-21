@@ -1,89 +1,61 @@
-# FUTBOLIÑO — Premium Gaming Federation Platform
-### High-Fidelity Interactive Web Application Demo
-
-[![Vite](https://img.shields.io/badge/Vite-v8.3-646CFF?logo=vite)](https://vitejs.dev/)
-[![React](https://img.shields.io/badge/React-v19-61DAFB?logo=react)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-v5.7-3178C6?logo=typescript)](https://www.typescriptlang.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-v3.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
-
-A competitive, high-fidelity interactive demonstration of the **FUTBOLIÑO Gaming Federation Platform**. Designed to client acquisition standards, the platform simulates the full end-to-end player lifecycle: onboarding, matchmaking, tournament knockout brackets, season leagues, authoritative Unity match engine handshakes, Elo calculations, and federation admin operations with local persistence.
+# Sakeena — Muslim Student Matchmaking Platform
+### Ultra-Premium Interactive Product Demonstration
+**Client:** Olympia Enterprises LLC  
+**Product:** Sakeena (`meetsakeena.com`)  
+**Proposition:** *Meet, chat and match — free.*
 
 ---
 
-## 🌟 Executive Overview & Key Highlights
+## 📖 Overview
 
-- **Aesthetic Direction:** Restrained, sophisticated sports technology aesthetic using forest greens (`#245C45`), warm off-whites (`#F7F8F5`), soft neutrals (`#F0F2EE`), deep charcoal (`#202722`), and muted gold accents (`#B69A60`). No electric blues or neon gradients.
-- **Unified Demonstration State:** Built on a centralized Zustand store with `localStorage` persistence (`futbolino_demo_state_v1`). All match results, bracket progressions, points tables, and Elo adjustments synchronize in real-time.
-- **Unity Match Engine Simulation:** Demonstrates pre-match session allocation, a 5-stage WebRTC connection handshake, live tactical pitch HUD, and server-authoritative score verification (PRD Section 25).
-- **Interactive Knockout Bracket:** An 8-player single-elimination tournament bracket with Quarter-Finals, Semi-Finals, Grand Final, dynamic winner propagation, and champion coronation.
-- **Round-Robin League:** 8-club championship table featuring automatic sorting by Points → Goal Difference → Goals Scored, with instant fixture simulation.
-- **Federation High Command (Admin Console):** Complete user moderation (suspend/reactivate), scoreline arbitration, tournament creation modal, and payment ledger with simulated refunds.
+Sakeena is an ultra-premium matchmaking website engineered specifically for Muslim college and university students across:
+- **United States**
+- **GCC Countries**
+- **Southeast Asia**
+- **Canada**
 
----
-
-## 🧭 Application Routes
-
-### Public Federation Website
-| Route | Page | Key Features |
-|---|---|---|
-| `/` | **Landing Page** | Cinematic stadium visual, animated live counters (12,480 players), split About section, How it works, Featured competitions, Top 5 global rankings preview, Footer |
-| `/login` | **Authentication** | Demo 1-click login as Alex Morgan (`demo123`), show/hide password, simulated forgot password modal |
-| `/register` | **Registration** | Player handle creation, password strength meter, country selector, baseline 1,000 Elo initialization |
-| `/tutorial` | **Academy Playbook** | 6 masterclasses (Movement, Passing, Defence, Shooting, Tournaments) with interactive video player modal |
-
-### Authenticated Player Platform
-| Route | Page | Key Features |
-|---|---|---|
-| `/dashboard` | **Player Dashboard** | Welcome banner, 4 KPI cards (1,485 Elo, #124 Rank, 68 Matches, 64.7% Win Rate), performance bars, recent match dossiers, World Cup QF4 fixture launch |
-| `/play` | **Friendly Match** | Tactician search, player directory, match sanction picker (Friendly vs Ranked) |
-| `/challenges` | **Challenges Hub** | Incoming, Outgoing, and Accepted tabs with inline accept triggers |
-| `/matches/:id` | **Unity Match Simulation** | Pre-match header, 5-stage handshake, live tactical pitch simulation, victory simulation triggers, Elo recalculation |
-| `/tournaments` | **Tournament Hub** | Filter by All, Active, Registration Open, Upcoming; checkout modal with simulated credit card & PayPal processing |
-| `/tournaments/:id` | **Tournament Details** | Overview, participant roster, and interactive 8-player knockout bracket with live advancement |
-| `/league` | **League Championship** | Premier Division Season 4 table, matchday 7 fixtures with instant score simulation and table re-sorting |
-| `/history` | **Match History** | KPI summary, search & filters (Ranked, Tournament, League, Friendly), detailed match dossiers |
-| `/rankings` | **Global Rankings** | Verified Elo leaderboard (K=32), country filter, player search, user highlight |
-| `/profile` & `/players/:id` | **Player Profile** | Dossier for Alex Morgan or any player, tactical formations, match logs |
-| `/notifications` | **Notifications Center** | Unread badges, filter by category, inline challenge acceptance |
-
-### Administration Console
-| Route | Page | Key Features |
-|---|---|---|
-| `/admin` | **Admin Dashboard** | High-level metrics, active matches audit, competitor compliance status |
-| `/admin/users` | **User Control** | Tactician directory, search, suspend & reactivate player actions |
-| `/admin/matches` | **Match Arbitration** | Ledger review, scoreline correction modal, voiding anomalies |
-| `/admin/tournaments` | **Tournament Operations** | New tournament sanctioning modal with validation (name, format, fee, prize, dates) |
-| `/admin/leagues` | **League Operations** | Round schedule oversight, force-simulate fixtures |
-| `/admin/payments` | **Treasury Ledger** | Transaction nonces, method breakdown, simulated refund processing |
+Built with an editorial, natural design aesthetic that communicates peace, trust, comfort, authenticity, and simplicity. It features the client's strict official color palette (**Cream `#FAF4EA`**, **Sand `#E8DCC3`**, **Warm Gold `#C99A2E`**, **Soft Terracotta `#A34D28`**, and **Deep Warm Brown `#2B2118`**), editorial serif typography (**Cormorant Garamond** & **Inter**), with 0% green, 0% teal, and no cliché iconography.
 
 ---
 
-## ⚽ Elo Rating Implementation (PRD Section 13.3)
+## 🚀 Key Features Implemented
 
-Matches are recalibrated with standard Elo mathematics:
-- **Baseline starting rating:** `1,000`
-- **Federation K-factor:** `32`
-- **Expected Score Formula:**
-  $$\text{Expected} = \frac{1}{1 + 10^{\frac{\text{Rating}_{\text{Opponent}} - \text{Rating}_{\text{Player}}}{400}}}$$
-- **Rating Delta:**
-  $$\Delta = \text{Round}\left(K \times (\text{Actual} - \text{Expected})\right)$$
-
-*Unranked Friendly matches do not modify Elo standings.*
+1. **Brand Loading Screen:** Elegant cream & gold line expansion transition with tagline: *"A little more peace in finding your people."*
+2. **Cinematic Hero:** Authentic young adult Muslim man on left, young adult Muslim woman in cream/sand hijab on right, clear center space with headline *"All colleges and universities — have college friends worldwide."* and Free Forever badge. Faces remain completely unobstructed on all viewports.
+3. **Quick Signup:** "I am a: Man/Woman" & "Looking for: Woman/Man" controls that carry selections directly into registration.
+4. **2-Minute Signup Flow (`/join`):** 3-stage progress collecting only the 6 required details (Name, Email, Age, Gender, Location, 1 Photo). Interactive drag-and-drop photo upload simulation with instant preview.
+5. **Community Browse & Search (`/browse`):** 8 sample student profiles across 4 regions, all labeled with `SAMPLE PROFILE` badges. Functional search, filtering (Region, Denomination, Age), and sorting.
+6. **Detailed Member Profiles (`/profile/:id`):** Photo gallery, education & interests, compatibility percentage, Report modal, and Block modal (which hides the profile from browsing).
+7. **Messaging Suite (`/messages`):** Chat with sample conversations, read receipts, and accurate membership rule enforcement (Free male reply restriction, Complimentary Silver female quota, Gold/Elite unlimited).
+8. **30-Second Compatibility Quiz (`/personality-quiz`):** 5-question values quiz generating *"Your Compatibility Snapshot"* and updating browse compatibility scores.
+9. **My Profile Management (`/my-profile`):** Edit biography, university, interests, and manage photos with simulated *"Pending Approval"* moderation review. Includes interactive Account Deletion simulation.
+10. **Membership & Pricing (`/membership`):** Exact pricing tiers (**Silver $5.50 basic**, **Gold $9.50/mo**, **Elite $12.50/mo**) with 1, 3, and 12-month billing periods and Women's Complimentary Silver explanation.
+11. **Safety, Privacy & Terms (`/privacy`, `/terms`):** Detailed editorial policy demonstration pages.
+12. **Admin Demonstration (`/demo-admin`):** Moderation dashboard with metric cards, member directory, photo approval/reject queue, and community reports log.
+13. **Top Demo Switcher Bar:** Allows instant switching between personas (*Tariq [Male Free]*, *Maryam [Female Silver]*, *Zayd [Male Gold]*, and *Guest*), plus one-click demo data reset.
 
 ---
 
-## 🛠️ Development & Local Run
+## 🛠️ Tech Stack
 
+- **React 19**
+- **TypeScript**
+- **Vite 8**
+- **Tailwind CSS v4** (`@tailwindcss/vite`)
+- **Lucide React** (icons)
+- **React Router 7**
+
+---
+
+## 🌐 Netlify Deployment
+
+This repository is pre-configured for instant zero-configuration deployment to Netlify:
+- `netlify.toml` configured with `command = "npm run build"`, `publish = "dist"`, and SPA fallback redirects.
+- `public/_redirects` included as an additional routing safeguard.
+
+### Build Locally
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-
-# Run TypeScript check & build production bundle
 npm run build
-
-# Preview production build
 npm run preview
 ```
